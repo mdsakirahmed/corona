@@ -117,6 +117,9 @@
     <!-- End Breadcrumbbar -->
     <!-- Start Contentbar -->
     <div class="contentbar">
+    <?php
+    $TempValue=0;
+    ?>
         <!-- End row -->
         <!-- End col -->
         <div class="col-lg-12">
@@ -128,30 +131,43 @@
                         <div class="col-lg-10 col-xl-10">
                             <form id="basic-form-wizard" action="#">
                                 <div>
-                                    <h3>Q1</h3>
+                                    @foreach($qa as $qa)
+                                        <?php
+                                        $TempValue++;
+                                        ?>
+                                    <h3>Q{{ $TempValue }}</h3>
                                     <section>
-                                        <h1>Question 1</h1>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="card m-b-30">
+                                                    <div class="card-body">
+                                                         <div class="example-row">
+                                                            <div class="grid-example">
+                                                                <h1><b>{{ $TempValue }}.Question</b></h1>
+                                                                <div class="row">
+                                                                    <div class="col-sm-6"><button type="button" class="btn btn-primary btn-lg btn-block">{{ $qa->option1 }}</button></div>
+                                                                    <div class="col-sm-6"><button type="button" class="btn btn-primary btn-lg btn-block">{{ $qa->option2 }}</button></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-sm-6"><button type="button" class="btn btn-primary btn-lg btn-block">{{ $qa->option3 }}</button></div>
+                                                                    <div class="col-sm-6"><button type="button" class="btn btn-primary btn-lg btn-block">{{ $qa->option4 }}</button></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-sm-12"><button type="button" class="btn btn-primary btn-lg btn-block">{{ $qa->question }}</button></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </section>
-
-                                    <h3>Q2</h3>
-                                    <section>
-                                        <h1>Question 2</h1>
-                                    </section>
-
-                                    <h3>Q3</h3>
-                                    <section>
-                                        <h1>Question 3</h1>
-                                    </section>
-                                    <h3>Q4</h3>
-                                    <section>
-                                        <h1>Question 4</h1>
-                                    </section>
-                                    <h3>Q5</h3>
+                                    @endforeach
+                                    <h3>#</h3>
                                     <section>
                                         <h4 class="font-22 mb-3">Let's Finished !!!</h4>
-                                        <!-- Start col -->
                                         <div class="row justify-content-center">
-                                            <!-- Start col -->
+                                            <!-- Start col-->
                                             <div class="col-md-12 col-lg-10 col-xl-10">
                                                 <div class="card m-b-30">
                                                     <div class="card-body">
@@ -204,7 +220,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- End col -->
+                                            <!-- End col-->
                                         </div>
                                         <!-- End col -->
                                     </section>

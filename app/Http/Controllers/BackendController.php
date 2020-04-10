@@ -97,6 +97,19 @@ class BackendController extends Controller
         $qa = QuestionAnswer::find(Crypt::decryptString($id));
         return view('back-end.edit-question-answer', compact('qa'));
     }
+    //QuestionAnswerDelete
+    public function QuestionAnswerDelete($id){
+        try{
+            QuestionAnswer::findOrFail(Crypt::decryptString($id))->delete();
+            session()->flash('message','Successfully Delete This Question.');
+            session()->flash('type','success');
+            return  redirect()->route('BackendControllerQuestionAnswer');
+        }catch (Exception $exception){
+            session()->flash('message','Error');
+            session()->flash('type','danger');
+            return redirect()->back();
+        }
+    }
     //User
     public function user(){
         $user = User::All();

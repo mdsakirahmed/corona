@@ -63,7 +63,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="basic-addon3">Phone:</span>
                                         </div>
-                                        <input type="tel" class="form-control" id="basic-url" aria-describedby="basic-addon3" required placeholder="Your Name" name="phone" value="{{ old('phone') }}">
+                                        <input type="tel" class="form-control" id="basic-url" aria-describedby="basic-addon3" required placeholder="Your Phone" name="phone" value="{{ old('phone') }}">
                                     </div>
                                 </div>
                                 <hr>

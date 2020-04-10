@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Certificate;
+use App\QuestionAnswer;
 use Illuminate\Http\Request;
 
 class CertificateController extends Controller
@@ -14,7 +15,8 @@ class CertificateController extends Controller
      */
     public function index()
     {
-        return view('certificate.certificate');
+        $qa = QuestionAnswer::All();
+        return view('certificate.certificate',compact('qa'));
     }
 
     /**

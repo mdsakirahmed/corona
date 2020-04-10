@@ -11,8 +11,9 @@
         <div class="profilebar text-center">
             <img src="{{ asset('assets/images/users/profile.svg') }}" class="img-fluid" alt="profile">
             <div class="profilename">
-              <h5 class="text-white">{{ Auth::user()->name }}</h5>
-              <p>Social Media Strategist</p>
+              <h5 class="text-red"><b>{{ Auth::user()->name }}</b></h5>
+              <p>{{ Auth::user()->email }}</p>
+              <p>{{ Auth::user()->phone }}</p>
             </div>
             <div class="userbox">
                 <ul class="list-inline mb-0">
