@@ -5,9 +5,57 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Socialite;
+use App\User;
+use Auth;
+
 
 class LoginController extends Controller
 {
+
+    //login with facebook start
+    /**
+     * Redirect the user to the GitHub authentication page.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function redirectToProvider()
+    {
+        return Socialite::driver('facebook')->redirect();
+    }
+
+    /**
+     * Obtain the user information from GitHub.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function handleProviderCallback()
+    {
+        $userSocial = Socialite::driver('facebook')->user();
+        //dd($user);
+        //Auto login with old social user
+        $findUser = User::where('email',$userSocial->email)->first();
+        if($findUser){
+            Auth::login($findUser);
+            return redirect('/home');
+        }else{
+            //Store user data to db
+            $user = User::firstOrCreate([
+                'account'       =>$userSocial->getId(),
+                'nick_name'     =>$userSocial->getNickname(),
+                'name'          =>$userSocial->getName(),
+                'email'         =>$userSocial->getEmail(),
+                'avatar'        =>$userSocial->getAvatar(),
+                'provider_id'   => $userSocial->getid(),
+            ]);
+            Auth::login($user,true);
+            return redirect('/home');
+        }
+
+
+        // $user->token;
+    }
+    //login with facebook end
     /*
     |--------------------------------------------------------------------------
     | Login Controller

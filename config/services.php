@@ -2,6 +2,13 @@
 
 return [
 
+    // Add this for facebook login
+    'facebook' => [
+        'client_id' => env('FACEBOOK_CLIENT_ID'),
+        'client_secret' => env('FACEBOOK_CLIENT_SECRET'),
+        'redirect' => 'http://localhost/corona/login/facebook/callback',
+    ],
+    //End facebook login
     /*
     |--------------------------------------------------------------------------
     | Third Party Services

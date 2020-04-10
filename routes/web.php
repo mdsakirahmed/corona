@@ -17,6 +17,9 @@ Route::post('/certificate', 'CertificateController@store')->name('CertificateCon
 
 Auth::routes();
 
+Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
+Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
+
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin/dashboard', 'BackendController@dashboard')->name('BackendControllerDashboard');
 Route::get('/admin/question-answer', 'BackendController@QuestionAnswer')->name('BackendControllerQuestionAnswer');

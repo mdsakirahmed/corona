@@ -5,21 +5,13 @@
       <change beforePath="$PROJECT_DIR$/.idea/corona.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/corona.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BackendController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BackendController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CertificateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CertificateController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CommonWebsiteInfoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CommonWebsiteInfoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ResultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ResultController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_09_191628_create_certificates_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_09_191628_create_certificates_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_09_191708_create_common_website_infos_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_09_191708_create_common_website_infos_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/certificate/certificate.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/certificate/certificate.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/certificate/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/certificate/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/leftbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/leftbar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/main.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/orginal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/orginal.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/rightbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/rightbar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/UserSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UserSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -133,6 +125,8 @@
       <path value="$PROJECT_DIR$/vendor/brick/math" />
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
       <path value="$PROJECT_DIR$/vendor/intervention/image" />
+      <path value="$PROJECT_DIR$/vendor/league/oauth1-client" />
+      <path value="$PROJECT_DIR$/vendor/laravel/socialite" />
     </include_path>
   </component>
   <component name="ProjectId" id="1aJh5gU8JCZdE1hfTgHOQKnYNdA" />
@@ -176,7 +170,8 @@
       <workItem from="1586459424020" duration="20020000" />
       <workItem from="1586482751225" duration="3980000" />
       <workItem from="1586511925007" duration="1727000" />
-      <workItem from="1586515313091" duration="26280000" />
+      <workItem from="1586515313091" duration="26725000" />
+      <workItem from="1586546879440" duration="5073000" />
     </task>
     <servers />
   </component>
@@ -192,9 +187,9 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="742" y="339" key="NewPhpClassDialog/0.0.1920.1050/1920.304.1366.738@0.0.1920.1050" timestamp="1586531131373" />
-    <state x="616" y="178" width="672" height="676" key="search.everywhere.popup" timestamp="1586517196007">
+    <state x="616" y="178" width="672" height="676" key="search.everywhere.popup" timestamp="1586550358123">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="616" y="178" width="672" height="676" key="search.everywhere.popup/0.0.1920.1050/1920.304.1366.738@0.0.1920.1050" timestamp="1586517196007" />
+    <state x="616" y="178" width="672" height="676" key="search.everywhere.popup/0.0.1920.1050/1920.304.1366.738@0.0.1920.1050" timestamp="1586550358123" />
   </component>
 </project>

@@ -13,7 +13,7 @@ class UserSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'image'     => 'default.png',
+            'avatar'     => 'default.png',
             'name'      => 'Md. Sakir Ahmed',
             'email'     => 'm.sakirahmed@gmail.com',
             'phone'     => '+880 1304-734623',
