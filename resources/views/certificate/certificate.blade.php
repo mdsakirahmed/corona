@@ -117,125 +117,68 @@
     <!-- End Breadcrumbbar -->
     <!-- Start Contentbar -->
     <div class="contentbar">
-    <?php
-    $TempValue=0;
-    ?>
-        <!-- End row -->
-        <!-- End col -->
-        <div class="col-lg-12">
-            <div class="card m-b-30">
-                <div class="card-header">
-                </div>
-                <div class="card-body">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-10 col-xl-10">
-                            <form id="basic-form-wizard" action="#">
-                                <div>
-                                    @foreach($qa as $qa)
-                                        <?php
-                                        $TempValue++;
-                                        ?>
-                                    <h3>Q{{ $TempValue }}</h3>
-                                    <section>
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <div class="card m-b-30">
-                                                    <div class="card-body">
-                                                         <div class="example-row">
-                                                            <div class="grid-example">
-                                                                <h1><b>{{ $TempValue }}.Question</b></h1>
-                                                                <div class="row">
-                                                                    <div class="col-sm-6"><button type="button" class="btn btn-primary btn-lg btn-block">{{ $qa->option1 }}</button></div>
-                                                                    <div class="col-sm-6"><button type="button" class="btn btn-primary btn-lg btn-block">{{ $qa->option2 }}</button></div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-sm-6"><button type="button" class="btn btn-primary btn-lg btn-block">{{ $qa->option3 }}</button></div>
-                                                                    <div class="col-sm-6"><button type="button" class="btn btn-primary btn-lg btn-block">{{ $qa->option4 }}</button></div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-sm-12"><button type="button" class="btn btn-primary btn-lg btn-block">{{ $qa->question }}</button></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+        <section>
+            <h4 class="font-22 mb-3 text-center"></h4>
+            <div class="row justify-content-center">
+                <!-- Start col-->
+                <div class="col-md-12 col-lg-10 col-xl-10">
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <div class="invoice">
+                                <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+                                <div class="crt_container">
+                                    <div class="crt_logo">
+                                        <img src="https://www.davidbenrimon.com/files-wide/uploads/logo-placeholder@2x.png">
+                                    </div>
+                                    <div class="crt_content">
+                                        <h1 class="crt_title">Cehhhhrtificate Of Completion
+                                        </h1>
+                                        <h2>This Certificate is awarded to</h2>
+                                        <h1 class="colorGreen crt_user">Sohrab Zia</h1>
+
+                                        <h3 class="afterName">For his/her completion of  HSE Awareness session
+                                        </h3>
+
+                                        <h3><span class="colorGrey">Awarded on</span> 1st March 2018 </h3>
+
+                                        <div class="signLeft">
+                                            <img src="https://camo.githubusercontent.com/805e05b94844e39d7edd518f492c8599c71835b3/687474703a2f2f692e696d6775722e636f6d2f646e5873344e442e706e67" alt="">
+                                            <h3>Person Name </h3>
+                                            <h3>Learning Lead</h3>
+                                            <h3>Department Name</h3>
                                         </div>
-                                    </section>
-                                    @endforeach
-                                    <h3>#</h3>
-                                    <section>
-                                        <h4 class="font-22 mb-3">Let's Finished !!!</h4>
-                                        <div class="row justify-content-center">
-                                            <!-- Start col-->
-                                            <div class="col-md-12 col-lg-10 col-xl-10">
-                                                <div class="card m-b-30">
-                                                    <div class="card-body">
-                                                        <div class="invoice">
-                                                            <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
-                                                            <div class="crt_container">
-                                                                <div class="crt_logo">
-                                                                    <img src="https://www.davidbenrimon.com/files-wide/uploads/logo-placeholder@2x.png">
-                                                                </div>
-                                                                <div class="crt_content">
-                                                                    <h1 class="crt_title">Cehhhhrtificate Of Completion
-                                                                    </h1>
-                                                                    <h2>This Certificate is awarded to</h2>
-                                                                    <h1 class="colorGreen crt_user">Sohrab Zia</h1>
-
-                                                                    <h3 class="afterName">For his/her completion of  HSE Awareness session
-                                                                    </h3>
-
-                                                                    <h3><span class="colorGrey">Awarded on</span> 1st March 2018 </h3>
-
-                                                                    <div class="signLeft">
-                                                                        <img src="https://camo.githubusercontent.com/805e05b94844e39d7edd518f492c8599c71835b3/687474703a2f2f692e696d6775722e636f6d2f646e5873344e442e706e67" alt="">
-                                                                        <h3>Person Name </h3>
-                                                                        <h3>Learning Lead</h3>
-                                                                        <h3>Department Name</h3>
-                                                                    </div>
-                                                                    <div class="signRight">
-                                                                        <img src="https://camo.githubusercontent.com/805e05b94844e39d7edd518f492c8599c71835b3/687474703a2f2f692e696d6775722e636f6d2f646e5873344e442e706e67" alt="">
-                                                                        <h3>Person Name </h3>
-                                                                        <h3>Learning Lead</h3>
-                                                                        <h3>Department Name</h3>
-                                                                    </div>
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="invoice-footer">
-                                                                <div class="row align-items-center">
-                                                                    <div class="col-md-6">
-                                                                        <p class="mb-0"></p>
-                                                                    </div>
-                                                                    <div class="col-md-6">
-                                                                        <div class="invoice-footer-btn">
-                                                                            <a href="javascript:window.print()" class="btn btn-primary-rgba py-1 font-16"><i class="feather icon-printer mr-2"></i>Print</a>
-                                                                            <a href="#" class="btn btn-success-rgba py-1 font-16"><i class="feather icon-send mr-2"></i>Submit</a>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- End col-->
+                                        <div class="signRight">
+                                            <img src="https://camo.githubusercontent.com/805e05b94844e39d7edd518f492c8599c71835b3/687474703a2f2f692e696d6775722e636f6d2f646e5873344e442e706e67" alt="">
+                                            <h3>Person Name </h3>
+                                            <h3>Learning Lead</h3>
+                                            <h3>Department Name</h3>
                                         </div>
-                                        <!-- End col -->
-                                    </section>
+                                    </div>
+
                                 </div>
-                            </form>
+                                <div class="invoice-footer">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-6">
+                                            <p class="mb-0"></p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="invoice-footer-btn">
+                                                <a href="javascript:window.print()" class="btn btn-primary-rgba py-1 font-16"><i class="feather icon-printer mr-2"></i>Print</a>
+                                                <a href="#" class="btn btn-success-rgba py-1 font-16"><i class="feather icon-send mr-2"></i>Submit</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <!-- End col-->
             </div>
-        </div>
+            <!-- End col -->
+        </section>
     </div>
-    <!-- End Contentbar -->
 @endsection
 @section('script')
-    <!-- Form Step js -->
-    <script src="{{ asset('assets/plugins/jquery-step/jquery.steps.min.js') }}"></script>
-    <script src="{{ asset('assets/js/custom/custom-form-wizard.js') }}"></script>
+
 @endsection

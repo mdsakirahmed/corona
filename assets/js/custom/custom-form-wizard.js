@@ -19,6 +19,7 @@ $(document).ready(function() {
           $("#basic-form-wizard").submit();
       }
   });
+
   var verticalform = $("#vertical-form-wizard");
   verticalform.children("div").steps({
     headerTag: "h3",
@@ -31,7 +32,7 @@ $(document).ready(function() {
       },
       onFinished: function (event, currentIndex)
       {
-          $("#vertical-form-wizard").submit();          
+          $("#vertical-form-wizard").submit();
       }
   });
   $('#basic-form-wizard .steps').prepend( "<div class='form-wizard-line'></div>" );

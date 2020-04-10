@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8bd96100-d006-4ee2-92ed-98f2b2d5adcc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/certificate/form.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BackendController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BackendController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CertificateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CertificateController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/back-end/user.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/user.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/custom/custom-form-wizard.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/custom/custom-form-wizard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/plugins/jquery-step/jquery.steps.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/plugins/jquery-step/jquery.steps.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/certificate/certificate.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/certificate/certificate.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/leftbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/leftbar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/main.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/certificate/certificate2.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,7 +164,7 @@
       <workItem from="1586459424020" duration="20020000" />
       <workItem from="1586482751225" duration="3980000" />
       <workItem from="1586511925007" duration="1727000" />
-      <workItem from="1586515313091" duration="262000" />
+      <workItem from="1586515313091" duration="11924000" />
     </task>
     <servers />
   </component>
@@ -176,5 +176,9 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050/1920.304.1366.738@0.0.1920.1050" timestamp="1586486054557" />
+    <state x="616" y="178" width="672" height="676" key="search.everywhere.popup" timestamp="1586517196007">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="616" y="178" width="672" height="676" key="search.everywhere.popup/0.0.1920.1050/1920.304.1366.738@0.0.1920.1050" timestamp="1586517196007" />
   </component>
 </project>

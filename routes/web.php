@@ -11,10 +11,8 @@
 |
 */
 
-
-
 Route::get('/', 'CertificateController@index')->name('CertificateControllerIndex');
-
+Route::post('/form', 'CertificateController@store')->name('CertificateControllerStore');
 
 
 Auth::routes();
