@@ -9,8 +9,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title> @yield('title') </title>
+        <link rel="icon" href="{{ asset('uploads/images/'.$c_information->favicon) }}" type="image/gif" sizes="16x16">
         <!-- Fevicon -->
-        <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}">
         <!-- Start CSS -->
         @yield('style')
         <link href="{{ asset('assets/plugins/switchery/switchery.min.css') }}" rel="stylesheet" type="text/css">
@@ -20,7 +20,7 @@
         <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" type="text/css">
         <!-- End CSS -->
     </head>
-    <body class="vertical-layout">
+    <body class="vertical-layout" style="background-color: {{ $c_information->background_color }}">
 
         <!-- Start Containerbar -->
         <div id="containerbar">

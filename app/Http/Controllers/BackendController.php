@@ -2,7 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\CommonWebsiteInfo;
+use App\ContactNumberOfWebsite;
+use App\EmailAddressOfWebsite;
+use App\InformationSenderEmailOfWebsite;
+use App\OfficialAddressOfWebsite;
 use App\QuestionAnswer;
+use App\SocialMediaLinkOfWebsite;
 use App\User;
 use http\Exception;
 use Illuminate\Http\Request;
@@ -18,12 +24,14 @@ class BackendController extends Controller
 
     //Dashboard
     public function dashboard(){
-        return view('back-end.dashboard');
+        $c_information  =   CommonWebsiteInfo::find(1);
+        return view('back-end.dashboard', compact('c_information'));
     }
     //QuestionAnswer
     public function QuestionAnswer(){
         $qa = QuestionAnswer::All();
-        return view('back-end.question-answer',compact('qa'));
+        $c_information  =   CommonWebsiteInfo::find(1);
+        return view('back-end.question-answer',compact('qa','c_information'));
     }
     //QuestionAnswer insert
     public function InsertQuestionAnswer(Request $request)
@@ -95,7 +103,8 @@ class BackendController extends Controller
     //QuestionAnswerEdit
     public function QuestionAnswerEdit($id){
         $qa = QuestionAnswer::find(Crypt::decryptString($id));
-        return view('back-end.edit-question-answer', compact('qa'));
+        $c_information  =   CommonWebsiteInfo::find(1);
+        return view('back-end.edit-question-answer', compact('qa','c_information'));
     }
     //QuestionAnswerDelete
     public function QuestionAnswerDelete($id){
@@ -113,7 +122,8 @@ class BackendController extends Controller
     //User
     public function user(){
         $user = User::All();
-        return view('back-end.user',compact('user'));
+        $c_information  =   CommonWebsiteInfo::find(1);
+        return view('back-end.user',compact('user','c_information'));
     }
     //User
     public function InsertUser(Request $request){
@@ -142,5 +152,15 @@ class BackendController extends Controller
             return redirect()->back();
         }
     }
-    //
+    //setting
+    public function setting(){
+        // Data
+        $c_information  =   CommonWebsiteInfo::find(1);
+        $social         =   SocialMediaLinkOfWebsite::All();
+        $number         =   ContactNumberOfWebsite::All();
+        $email          =   EmailAddressOfWebsite::All();
+        $address        =   OfficialAddressOfWebsite::All();
+        $info_sender    =   InformationSenderEmailOfWebsite::find(1);
+        return view('back-end.setting', compact('c_information','social', 'number','email','address','info_sender'));
+    }
 }

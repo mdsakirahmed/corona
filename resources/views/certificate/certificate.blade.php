@@ -1,17 +1,20 @@
 @section('title')
-    Theta - Invoice
+    {{ $c_information->name }}
 @endsection
 @extends('layouts.orginal')
 @section('style')
     <style>
         .crt_container{
+            background-color: {{ $certificate->background_color }};
+        }
+        .crt_container{
             overflow:hidden;
             font-family:arial;
             width:600px;
             height:auto;
-            border:15px solid #0072c6;
-            border-right:15px solid #0894fb;
-            border-left:15px solid #0894fb;
+            border:15px solid {{ $certificate->site_bar_color }};
+            border-right:15px solid {{ $certificate->site_bar_color }};
+            border-left:15px solid {{ $certificate->site_bar_color }};
             margin:auto;
             display:table;
             padding:25px 10px;
@@ -116,14 +119,14 @@
     <!-- Start Breadcrumbbar -->
     <!-- End Breadcrumbbar -->
     <!-- Start Contentbar -->
-    <div class="contentbar">
+    <div class="contentbar" >
         <section>
             <h4 class="font-22 mb-3 text-center"></h4>
-            <div class="row justify-content-center">
+            <div class="row justify-content-center" >
                 <!-- Start col-->
-                <div class="col-md-12 col-lg-10 col-xl-10">
+                <div class="col-md-12 col-lg-10 col-xl-10" >
                     <div class="card m-b-30">
-                        <div class="card-body">
+                        <div class="card-body" style="background-color: {{ $c_information->background_color }}">
                             <div class="invoice">
                                 <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
                                 <div class="crt_container">
@@ -131,27 +134,36 @@
                                         <img src="https://www.davidbenrimon.com/files-wide/uploads/logo-placeholder@2x.png">
                                     </div>
                                     <div class="crt_content">
-                                        <h1 class="crt_title">Cehhhhrtificate Of Completion
+                                        <h1 class="crt_title">
+                                            {{ $certificate->certificate }}
                                         </h1>
-                                        <h2>This Certificate is awarded to</h2>
-                                        <h1 class="colorGreen crt_user">Sohrab Zia</h1>
+                                        <h2>{{ $certificate->which_certificate }}</h2>
+                                        <h1 class="colorGreen crt_user">_____</h1>
 
-                                        <h3 class="afterName">For his/her completion of  HSE Awareness session
+                                        <h3 class="afterName">
+                                            {{ $certificate->summary }}
                                         </h3>
 
-                                        <h3><span class="colorGrey">Awarded on</span> 1st March 2018 </h3>
+                                        <h3>
+                                            <span class="colorGrey">
+                                                {{ $certificate->award }}
+                                            </span>
+                                            DD MM YYYY
+                                        </h3>
 
                                         <div class="signLeft">
-                                            <img src="https://camo.githubusercontent.com/805e05b94844e39d7edd518f492c8599c71835b3/687474703a2f2f692e696d6775722e636f6d2f646e5873344e442e706e67" alt="">
-                                            <h3>Person Name </h3>
-                                            <h3>Learning Lead</h3>
-                                            <h3>Department Name</h3>
+                                            @if($certificate->signature1 != null)
+                                            <img src="{{ asset('uploads/images/'.$certificate->signature1) }}" alt="signature">
+                                            @endif
+                                            <h3>{{ $certificate->name1 }}</h3>
+                                            <h3>{{ $certificate->designation1 }}</h3>
                                         </div>
                                         <div class="signRight">
-                                            <img src="https://camo.githubusercontent.com/805e05b94844e39d7edd518f492c8599c71835b3/687474703a2f2f692e696d6775722e636f6d2f646e5873344e442e706e67" alt="">
-                                            <h3>Person Name </h3>
-                                            <h3>Learning Lead</h3>
-                                            <h3>Department Name</h3>
+                                            @if($certificate->signature2 != null)
+                                                <img src="{{ asset('uploads/images/'.$certificate->signature2) }}" alt="signature">
+                                            @endif
+                                            <h3>{{ $certificate->designation2 }}</h3>
+                                            <h3>{{ $certificate->award }}</h3>
                                         </div>
                                     </div>
 

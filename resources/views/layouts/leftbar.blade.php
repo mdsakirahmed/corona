@@ -53,6 +53,16 @@
                         <img src="{{ asset('assets/images/svg-icon/layouts.svg') }}" class="img-fluid" alt="layouts"><span>User</span><i class="feather"></i>
                     </a>
                 </li>
+                <li>
+                    <a href="{{ route('BackEndControllerSetting') }}">
+                        <img src="{{ asset('assets/images/svg-icon/layouts.svg') }}" class="img-fluid" alt="layouts"><span>Setting</span><i class="feather"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('CertificateSetupControllerCertificateSetup') }}">
+                        <img src="{{ asset('assets/images/svg-icon/layouts.svg') }}" class="img-fluid" alt="layouts"><span>Certificate Setup</span><i class="feather"></i>
+                    </a>
+                </li>
             </ul>
         </div>
         <!-- End Navigationbar -->

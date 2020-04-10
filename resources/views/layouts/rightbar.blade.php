@@ -125,7 +125,7 @@
 <!-- Start Footerbar -->
     <div class="footerbar">
         <footer class="footer">
-            <p class="mb-0">© 2019 Theta - All Rights Reserved.</p>
+            <p class="mb-0">{{ $c_information->copy_right }}</p>
         </footer>
     </div>
     <!-- End Footerbar -->

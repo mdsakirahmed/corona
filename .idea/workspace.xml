@@ -2,13 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8bd96100-d006-4ee2-92ed-98f2b2d5adcc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/certificate/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/corona.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/corona.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BackendController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BackendController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CertificateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CertificateController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/custom/custom-form-wizard.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/custom/custom-form-wizard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/plugins/jquery-step/jquery.steps.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/plugins/jquery-step/jquery.steps.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CommonWebsiteInfoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CommonWebsiteInfoController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ResultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ResultController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_09_191628_create_certificates_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_09_191628_create_certificates_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_09_191708_create_common_website_infos_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_09_191708_create_common_website_infos_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/certificate/certificate.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/certificate/certificate.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/certificate/certificate2.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/certificate/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/certificate/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/leftbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/leftbar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/main.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/orginal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/orginal.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/rightbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/rightbar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -121,6 +132,7 @@
       <path value="$PROJECT_DIR$/vendor/asm89/stack-cors" />
       <path value="$PROJECT_DIR$/vendor/brick/math" />
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/vendor/intervention/image" />
     </include_path>
   </component>
   <component name="ProjectId" id="1aJh5gU8JCZdE1hfTgHOQKnYNdA" />
@@ -139,8 +151,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\corona\resources\views\certificate" />
       <recent name="C:\xampp\htdocs\corona\resources\views\back-end" />
+      <recent name="C:\xampp\htdocs\corona\resources\views\certificate" />
       <recent name="C:\xampp\htdocs\corona\resources\views\layouts\orginal-includes" />
       <recent name="C:\xampp\htdocs\corona\resources\views\layouts" />
     </key>
@@ -164,7 +176,7 @@
       <workItem from="1586459424020" duration="20020000" />
       <workItem from="1586482751225" duration="3980000" />
       <workItem from="1586511925007" duration="1727000" />
-      <workItem from="1586515313091" duration="11924000" />
+      <workItem from="1586515313091" duration="26280000" />
     </task>
     <servers />
   </component>
@@ -172,10 +184,14 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1586486054557">
+    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1586540681180">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050/1920.304.1366.738@0.0.1920.1050" timestamp="1586486054557" />
+    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050/1920.304.1366.738@0.0.1920.1050" timestamp="1586540681180" />
+    <state x="742" y="339" key="NewPhpClassDialog" timestamp="1586531131373">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="742" y="339" key="NewPhpClassDialog/0.0.1920.1050/1920.304.1366.738@0.0.1920.1050" timestamp="1586531131373" />
     <state x="616" y="178" width="672" height="676" key="search.everywhere.popup" timestamp="1586517196007">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

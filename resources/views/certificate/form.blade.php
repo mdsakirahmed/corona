@@ -1,116 +1,9 @@
 @section('title')
-    Theta - Invoice
+    {{ $c_information->name }}
 @endsection
+
 @extends('layouts.orginal')
 @section('style')
-    <style>
-        .crt_container{
-            overflow:hidden;
-            font-family:arial;
-            width:600px;
-            height:auto;
-            border:15px solid #0072c6;
-            border-right:15px solid #0894fb;
-            border-left:15px solid #0894fb;
-            margin:auto;
-            display:table;
-            padding:25px 10px;
-            position:relative;
-        }
-
-        .crt_logo{
-            margin:auto;
-            display:inline-block;
-            width:100%;
-            padding:10px;
-            text-align:center;
-        }
-        .crt_logo img{
-            width:100px;
-
-        }
-        .crt_user{
-            display:inline-block;
-            width:80%;
-            padding:5px 25px;
-            margin-bottom:0px;
-            padding-bottom:0px;
-            font-family: 'Satisfy', cursive;
-            font-size:40px;
-            border-bottom:1px dashed #cecece;
-        }
-        .crt_title{
-            margin-top:40px;
-            font-family: 'Satisfy', cursive;
-            font-size:40px;
-            letter-spacing:1px;
-        }
-        .crt_content{
-            text-align:center;
-        }
-        .crt_content h1{
-            color:#0072c6;
-        }
-        h1.colorGreen{
-            color:#27ae60;
-        }
-        .crt_content h3 .colorGrey{
-            color:grey;
-        }
-        .crt_content h2{
-            color:#383737;
-        }
-        .crt_content h3{
-            font-weight:100;
-        }
-        h3.afterName{
-            font-weight:100;
-            color:#383737;
-
-
-        }
-        .signLeft{
-            float:left;
-        }
-        .signLeft,.signRight{
-            width:48%;
-            margin-top:40px;
-        }
-        .signLeft img,.signRight img{
-            width:150px;
-            margin-bottom:10px;
-        }
-        .signRight{
-            float:right;
-        }
-        .signLeft h3,.signRight h3{
-            margin:0px;
-            margin-bottom:5px;
-            font-size:16px;
-
-        }
-
-        .printCrt{
-            position:fixed;
-            right:10px;
-            top:10px;
-            z-index:999;
-            border:0px solid red;
-            background-color:#0072c6;
-            color:white;
-            width:100PX;
-            height:50px;
-            border-radius:100px;
-            transition:all 0.3s ease;
-            font-size:18px;
-            letter-spacing:1px;
-        }
-        .printCrt:hover{
-            cursor:pointer;
-            background-color:#135688;
-            box-shadow:2px 2px 10px 1px rgba(0, 0, 0, 0.25);
-        }
-    </style>
 @endsection
 @section('rightbar-content')
     <!-- Start Breadcrumbbar -->
@@ -143,8 +36,8 @@
         <!-- End col -->
         <div class="col-lg-12">
             <div class="card m-b-30">
-                <div class="card-body">
-                    <div class="row justify-content-center">
+                <div class="card-body" style="background-color: {{ $c_information->background_color }}">
+                    <div class="row justify-content-center" style="background-color: {{ $c_information->background_color }}">
                         <div class="col-lg-10 col-xl-10">
                             <form id="basic-form-wizard" action="{{ route('CertificateControllerStore') }}" method="post" enctype="multipart/form-data">
                                 @csrf
