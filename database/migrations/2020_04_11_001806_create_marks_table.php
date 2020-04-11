@@ -17,6 +17,7 @@ class CreateMarksTable extends Migration
             $table->id();
             $table->string('user_id')->nullable();
             $table->string('user_name')->nullable();
+            $table->string('user_phone')->nullable();
             $table->string('user_image')->nullable();
             $table->string('exam_time')->nullable();
             $table->string('total_marks')->nullable();

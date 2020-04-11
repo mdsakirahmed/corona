@@ -1,15 +1,15 @@
-@section('title') 
+@section('title')
 Theta - Home
-@endsection 
+@endsection
 @extends('layouts.main')
 @section('style')
 <!-- jvectormap css -->
 <link href="{{ asset('assets/plugins/jvectormap/jquery-jvectormap-2.0.2.css') }}" rel="stylesheet" type="text/css" />
 <!-- Datepicker css -->
 <link href="{{ asset('assets/plugins/datepicker/datepicker.min.css') }}" rel="stylesheet" type="text/css" />
-@endsection 
+@endsection
 @section('rightbar-content')
-<!-- Start Breadcrumbbar -->                    
+<!-- Start Breadcrumbbar -->
 <div class="breadcrumbbar">
     <div class="row align-items-center">
         <div class="col-md-8 col-lg-8">
@@ -24,20 +24,20 @@ Theta - Home
         </div>
         <div class="col-md-4 col-lg-4">
             <div class="widgetbar">
-                <button class="btn btn-primary">Add Widget</button>
-            </div>                        
+                <a href="{{ route('CertificateControllerIndex') }}" target="_blank" class="btn btn-primary">Go to frontend</a>
+            </div>
         </div>
-    </div>          
+    </div>
 </div>
 <!-- End Breadcrumbbar -->
-<!-- Start Contentbar -->    
-<div class="contentbar">                
+<!-- Start Contentbar -->
+<div class="contentbar">
     <!-- Start row -->
     <div class="row">
         <!-- Start col -->
         <div class="col-md-12 col-lg-6 col-xl-4">
             <div class="card m-b-30">
-                <div class="card-header">                                
+                <div class="card-header">
                     <div class="row align-items-center">
                         <div class="col-7">
                             <h5 class="card-title mb-0">Live Campaigns</h5>
@@ -60,11 +60,11 @@ Theta - Home
                 </div>
             </div>
         </div>
-        <!-- End col -->                    
+        <!-- End col -->
         <!-- Start col -->
         <div class="col-md-12 col-lg-6 col-xl-4">
             <div class="card m-b-30">
-                <div class="card-header">                                
+                <div class="card-header">
                     <div class="row align-items-center">
                         <div class="col-6">
                             <h5 class="card-title mb-0">Performance</h5>
@@ -73,7 +73,7 @@ Theta - Home
                             <ul class="list-inline-group text-right mb-0 pl-0">
                                 <li class="list-inline-item mr-0 font-12">Referrals</li>
                                 <li class="list-inline-item"><input type="checkbox" class="js-switch-performance" checked /></li>
-                            </ul>                                        
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -91,7 +91,7 @@ Theta - Home
         <!-- Start col -->
         <div class="col-md-12 col-lg-6 col-xl-4">
             <div class="card m-b-30">
-                <div class="card-header">                                
+                <div class="card-header">
                     <div class="row align-items-center">
                         <div class="col-5">
                             <h5 class="card-title mb-0">Statistics</h5>
@@ -105,10 +105,10 @@ Theta - Home
                                   <li class="nav-item">
                                     <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab"  aria-selected="false">Month</a>
                                   </li>
-                                </ul>  
+                                </ul>
                             </div>
                         </div>
-                    </div>                                
+                    </div>
                 </div>
                 <div class="card-body text-center pb-0 px-0">
                     <div class="row align-items-center">
@@ -124,7 +124,7 @@ Theta - Home
         <!-- Start col -->
         <div class="col-md-12 col-lg-6 col-xl-3">
             <div class="card m-b-30">
-                <div class="card-header">                                
+                <div class="card-header">
                     <div class="row align-items-center">
                         <div class="col-6">
                             <h5 class="card-title mb-0">Wallet</h5>
@@ -132,7 +132,7 @@ Theta - Home
                         <div class="col-6">
                             <ul class="list-inline-group text-right mb-0 pl-0">
                                 <li class="list-inline-item mr-0 font-12">Update <a href="#"><i class="feather icon-refresh-cw font-16 text-primary ml-1"></i></a></li>
-                            </ul>                                        
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -165,7 +165,7 @@ Theta - Home
         <!-- Start col -->
         <div class="col-md-12 col-lg-12 col-xl-5">
             <div class="card m-b-30">
-                <div class="card-header">                                
+                <div class="card-header">
                     <div class="row align-items-center">
                         <div class="col-6">
                             <h5 class="card-title mb-0">Spent</h5>
@@ -181,7 +181,7 @@ Theta - Home
                                         </select>
                                     </div>
                                 </li>
-                            </ul>                                        
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -247,7 +247,7 @@ Theta - Home
         <!-- Start col -->
         <div class="col-md-12 col-lg-6 col-xl-4">
             <div class="card m-b-30">
-                <div class="card-header">                                
+                <div class="card-header">
                     <div class="row align-items-center">
                         <div class="col-8">
                             <h5 class="card-title mb-0">Sources of Users</h5>
@@ -255,7 +255,7 @@ Theta - Home
                         <div class="col-4">
                             <ul class="list-inline-group text-right mb-0 pl-0">
                                 <li class="list-inline-item mr-0 font-12"><button type="button" class="btn btn-sm btn-primary-rgba font-14 px-2">Export</button></li>
-                            </ul>                                        
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -268,7 +268,7 @@ Theta - Home
         <!-- Start col -->
         <div class="col-md-12 col-lg-6 col-xl-4">
             <div class="card m-b-30">
-                <div class="card-header">                                
+                <div class="card-header">
                     <div class="row align-items-center">
                         <div class="col-8">
                             <h5 class="card-title mb-0">Top Countries</h5>
@@ -276,7 +276,7 @@ Theta - Home
                         <div class="col-4">
                             <ul class="list-inline-group text-right mt-1 mb-0 pl-0">
                                 <li class="list-inline-item mr-0 font-12"><i class="feather icon-more-vertical- font-20 text-primary"></i></li>
-                            </ul>                                        
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -332,7 +332,7 @@ Theta - Home
         <!-- Start col -->
         <div class="col-md-12 col-lg-6 col-xl-4">
             <div class="card m-b-30">
-                <div class="card-header">                                
+                <div class="card-header">
                     <div class="row align-items-center">
                         <div class="col-8">
                             <h5 class="card-title mb-0">Browsers</h5>
@@ -340,7 +340,7 @@ Theta - Home
                         <div class="col-4">
                             <ul class="list-inline-group text-right mb-0 pl-0">
                                 <li class="list-inline-item mr-0 font-12"><button type="button" class="btn btn-sm btn-success-rgba font-14 px-2">Update</button></li>
-                            </ul>                                        
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -390,7 +390,7 @@ Theta - Home
         <!-- Start col -->
         <div class="col-md-12 col-lg-6 col-xl-5">
             <div class="card m-b-30">
-                <div class="card-header">                                
+                <div class="card-header">
                     <div class="row align-items-center">
                         <div class="col-6">
                             <h5 class="card-title mb-0">Task Report</h5>
@@ -407,7 +407,7 @@ Theta - Home
                                         </select>
                                     </div>
                                 </li>
-                            </ul>                                        
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -546,7 +546,7 @@ Theta - Home
                     <h5 class="card-title mb-0">Country Wise Performance</h5>
                 </div>
                 <div class="card-body">
-                    <div id="world-map" class="vector-world-map"></div>                                
+                    <div id="world-map" class="vector-world-map"></div>
                     <div class="row">
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
                             <ul class="list-unstyled">
@@ -586,7 +586,7 @@ Theta - Home
                                     </div>
                                 </li>
                             </ul>
-                        </div>                                    
+                        </div>
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
                             <ul class="list-unstyled">
                                 <li class="media">
@@ -635,16 +635,16 @@ Theta - Home
     <!-- End row -->
 </div>
 <!-- End Contentbar -->
-@endsection 
+@endsection
 @section('script')
 <!-- Chart js -->
 <script src="{{ asset('assets/plugins/chart.js/chart.min.js') }}"></script>
 <script src="{{ asset('assets/plugins/chart.js/chart-bundle.min.js') }}"></script>
 <!-- Piety Chart js -->
-<script src="{{ asset('assets/plugins/peity/jquery.peity.min.js') }}"></script> 
+<script src="{{ asset('assets/plugins/peity/jquery.peity.min.js') }}"></script>
 <!-- Vector Maps js -->
 <script src="{{ asset('assets/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js') }}"></script>
 <script src="{{ asset('assets/plugins/jvectormap/jquery-jvectormap-world-mill-en.js') }}"></script>
-<!-- Custom Dashboard Social js -->   
+<!-- Custom Dashboard Social js -->
 <script src="{{ asset('assets/js/custom/custom-dashboard-social.js') }}"></script>
-@endsection 
+@endsection

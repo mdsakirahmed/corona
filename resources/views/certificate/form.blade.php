@@ -4,12 +4,38 @@
 
 @extends('layouts.orginal')
 @section('style')
+
+    <style>
+        .myButton {
+            box-shadow: 18px 25px 12px 19px #8a2a21;
+            background:linear-gradient(to bottom, #c62d1f 5%, #f24437 100%);
+            background-color:#c62d1f;
+            border-radius:20px;
+            display:inline-block;
+            cursor:pointer;
+            color:#ffffff;
+            font-family:Arial;
+            text-decoration-style: b;
+            padding:32px 32px;
+            text-decoration:none;
+            text-shadow:0px 4px 0px #810e05;
+            font-weight: bold;
+        }
+        .myButton:hover {
+            background:linear-gradient(to bottom, #f24437 5%, #c62d1f 100%);
+            background-color:#f24437;
+        }
+        .myButton:active {
+            position:relative;
+            top:1px;
+        }
+    </style>
 @endsection
 @section('rightbar-content')
     <!-- Start Breadcrumbbar -->
     <!-- End Breadcrumbbar -->
     <!-- Start Contentbar -->
-    <div class="contentbar">
+    <div class="">
     <?php
     $TempValue=0;
     ?>
@@ -53,7 +79,6 @@
                                             <div class="modal-header">
                                                 <h5 class="modal-title mt-0"><b>{{ $TempValue }} &nbsp; {{ $qa->question }}</b></h5>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">(Question)</span>
                                                 </button>
                                             </div>
                                             <div class="modal-body">
@@ -118,11 +143,50 @@
                                         </div>
                                     </section>
                                     @endforeach
-                                    <h3>#</h3>
+                                    <h3>*</h3>
                                     <section>
-                                        <h4 class="font-22 mb-3"> <b>Get a certificate</b> </h4>
+                                        <div class="modal-body">
                                             <div class="row">
-                                                <div class="col-sm-12"><button type="submit" class="btn btn-primary btn-lg btn-block">Certificate</button></div>
+                                                <div class="col-lg-12">
+                                                    <div class="card m-b-30">
+                                                        <div class="card-body">
+                                                            <div class="example-row">
+                                                                <div class="grid-example">
+                                                                    <div class="row text-center">
+                                                                        <!--1of 1st line-->
+                                                                        <div class="col-sm-6">
+                                                                            <div class="col-sm-12">
+                                                                                <input required type="text"class=" text-center" name="user_name" style="  border: none;  border-bottom: 4px solid #8842d5; width: 100%;" value="{{ old('user_name') }}" placeholder="Your Name">
+                                                                            </div>
+                                                                        </div>
+                                                                        <!--2of 1st line-->
+                                                                        <div class="col-sm-6">
+                                                                            <div class="col-sm-12">
+                                                                                <input required type="text"class="text-center" name="user_phone" style="  border: none;  border-bottom: 4px solid #8842d5; width: 100%;" value="{{ old('user_phone') }}" placeholder="Your Phone">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-12" class="row justify-content-center">
+                                                            <input type="submit" href="#" class="myButton text-center" style="width: 100%;" value="Certificate">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- End col -->
+                                    </section>
+
+                                        <h3>#</h3>
+                                    <section>
+                                        <h4 class="font-22 mb-3"> </h4>
+                                            <div class="row">
+                                                <div class="col-sm-12" class="row justify-content-center">
+                                                    <input type="submit" href="#" class="myButton text-center" style="width: 100%;" value="Certificate">
+                                                </div>
                                             </div>
                                         <!-- End col -->
                                     </section>

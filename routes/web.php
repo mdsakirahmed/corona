@@ -42,6 +42,8 @@ Route::group(['middleware'=>['auth','admin']], function (){
 
 //Setting View
     Route::get('/admin/setting', 'BackendController@setting')->name('BackEndControllerSetting');
+    //Result
+    Route::get('/admin/result', 'BackendController@result')->name('BackEndControllerResult');
 //Update Common Website Information * in Setting view
     Route::post('/admin/CommonInformationOfWebsiteEdit', 'CommonWebsiteInfoController@edit')->name('CommonInformationOfWebsiteEdit');
 //Add Social Links * in Setting view

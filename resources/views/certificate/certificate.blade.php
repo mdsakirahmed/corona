@@ -133,16 +133,16 @@
                                 <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
                                 <div class="crt_container">
                                     <div class="crt_logo">
-                                        @if($new_mark->user_image != null)
-                                        <img src="{{ $new_mark->user_image }}">
-                                            @endif
+
+                                        <img src="">
+
                                     </div>
                                     <div class="crt_content">
                                         <h1 class="crt_title">
                                             {{ $certificate->certificate }}
                                         </h1>
                                         <h2>{{ $certificate->which_certificate }}</h2>
-                                        <h1 class="colorGreen crt_user"> {{ Auth::user()->name }} </h1>
+                                        <h1 class="colorGreen crt_user"> {{ $new_mark->user_name }} </h1>
 
                                         <h3 class="afterName">
                                            <b>{{ $new_mark->got_mark }}/ {{ $new_mark->total_marks }}</b> {{ $certificate->summary }}
@@ -166,8 +166,8 @@
                                             @if($certificate->signature2 != null)
                                                 <img src="{{ asset('uploads/images/'.$certificate->signature2) }}" alt="signature">
                                             @endif
+                                            <h3>{{ $certificate->name2 }}</h3>
                                             <h3>{{ $certificate->designation2 }}</h3>
-                                            <h3>{{ $certificate->award }}</h3>
                                         </div>
                                     </div>
 

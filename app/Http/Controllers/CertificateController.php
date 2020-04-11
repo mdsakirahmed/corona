@@ -127,8 +127,6 @@ class CertificateController extends Controller
 
             ";
             exit();
-        }else{
-            $this->middleware('auth');
         }
     }
     /**
@@ -161,14 +159,15 @@ class CertificateController extends Controller
      */
     public function store(Request $request)
     {
+        $count_question=0;
+        $count_marks=0;
 
         $qa = QuestionAnswer::All();
 
-        $count_question=0;
-        $count_marks=0;
+
         foreach ($qa as $qa) {
 
-            $count_question++;
+            $count_question=$count_question+1;
 
             $this->validate($request,[
                 'YouNeedToAnswerQuestionNumber'.$qa->id=>'required|max:1',
@@ -177,44 +176,46 @@ class CertificateController extends Controller
             //DB
             $result= new Result();
 
-            $result->user_id=Auth::user()->id;
+           // $result->user_id=Auth::user()->id;
             $result->question_id=$qa->id;
             $result->question=$qa->question;
             $result->correct_ans=$qa->answer;
 
-            $result->given_ans=$request->input('customRadioInline2_id_'.$qa->id);
-            if($qa->answer == $request->input('customRadioInline2_id_'.$qa->id)){
-
-                $count_marks++;
+            $result->given_ans=$request->input('YouNeedToAnswerQuestionNumber'.$qa->id);
+            if($qa->answer == $request->input('YouNeedToAnswerQuestionNumber'.$qa->id)){
+                $count_marks=$count_marks+1;
                 $result->mark=1;
             }else{
-
                 $result->mark=0;
             }
 
             $result->save();
         }
-
+        $this->validate($request,[
+            'user_name'=>'required|max:50',
+            'user_phone'=>'required|max:15',
+        ]);
         $mark= new Marks();
-        $mark->user_id = Auth::user()->id;
-        $mark->user_name = Auth::user()->name;
-        $mark->user_image = Auth::user()->avatar;
+        //$mark->user_id = Auth::user()->id;
+        $mark->user_name = $request->input('user_name');
+        $mark->user_phone = $request->input('user_phone');
+        //$mark->user_image = Auth::user()->avatar;
         $mark->exam_time = Carbon::today()->toDateString();
         $mark->total_marks = $count_question;
         $mark->got_mark = $count_marks;
 
         try{
-
             $mark->save();
             session()->flash('message','Successfully Store.');
             session()->flash('type','success');
             $c_information  =   CommonWebsiteInfo::find(1);
             $certificate  =   Certificate::find(1);
-            $new_mark = Marks::latest()->where('user_id',  Auth::user()->id)->first();
+            $new_mark = Marks::latest()->where('user_phone',  $request->input('user_phone'))->first();
             //$user = DB::table('users')->where('name', 'John')->first();
            // $this->middleware('auth');
 
-                return view('certificate.certificate',compact('c_information','certificate','new_mark'));
+            //echo $new_mark->user_name;
+            return view('certificate.certificate',compact('c_information','certificate','new_mark'));
 
         }catch (Exception $exception){
 

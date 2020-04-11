@@ -6,12 +6,14 @@ use App\CommonWebsiteInfo;
 use App\ContactNumberOfWebsite;
 use App\EmailAddressOfWebsite;
 use App\InformationSenderEmailOfWebsite;
+use App\Marks;
 use App\OfficialAddressOfWebsite;
 use App\QuestionAnswer;
 use App\SocialMediaLinkOfWebsite;
 use App\User;
 use http\Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Hash;
 
@@ -162,5 +164,12 @@ class BackendController extends Controller
         $address        =   OfficialAddressOfWebsite::All();
         $info_sender    =   InformationSenderEmailOfWebsite::find(1);
         return view('back-end.setting', compact('c_information','social', 'number','email','address','info_sender'));
+    }
+
+    //Result
+    public function result(){
+        $c_information  =   CommonWebsiteInfo::find(1);
+        $mark = Marks::All();
+        return view('back-end.result', compact('c_information','mark'));
     }
 }

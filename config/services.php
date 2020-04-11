@@ -6,7 +6,7 @@ return [
     'facebook' => [
         'client_id' => env('FACEBOOK_CLIENT_ID'),
         'client_secret' => env('FACEBOOK_CLIENT_SECRET'),
-        'redirect' => 'http://localhost/corona/login/facebook/callback',
+        'redirect' => env('FACEBOOK_URL'),
     ],
     //End facebook login
     /*

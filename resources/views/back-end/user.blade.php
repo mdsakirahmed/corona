@@ -22,7 +22,7 @@
             </div>
             <div class="col-md-4 col-lg-4">
                 <div class="widgetbar">
-                    <button class="btn btn-primary">Add Widget</button>
+                    <a href="{{ route('CertificateControllerIndex') }}" target="_blank" class="btn btn-primary">Go to frontend</a>
                 </div>
             </div>
         </div>
@@ -111,6 +111,7 @@
                                     <thead>
                                     <tr>
                                         <th>ID</th>
+                                        <th>Image</th>
                                         <th>Name</th>
                                         <th>Email</th>
                                         <th>Phone</th>
@@ -120,6 +121,8 @@
                                     @foreach($user as $user)
                                         <tr>
                                             <td class="@if($user->id==Auth::user()->id) success-rgba @endif">{{ $user->id }}</td>
+                                            <td class="@if($user->avatar==Auth::user()->avatar) success-rgba @endif">
+                                                <img src="{{ $user->avatar }}" alt="" style="border-radius: 50%; width:50px"> </td>
                                             <td class="@if($user->name==Auth::user()->name) success-rgba @endif">{{ $user->name }}</td>
                                             <td class="@if($user->email==Auth::user()->email) success-rgba @endif">{{ $user->email }}</td>
                                             <td class="@if($user->phone==Auth::user()->phone) success-rgba @endif">{{ $user->phone }}</td>
