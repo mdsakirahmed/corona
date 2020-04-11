@@ -3,6 +3,8 @@
 @endsection
 @extends('layouts.orginal')
 @section('style')
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://files.codepedia.info/files/uploads/iScripts/html2canvas.js"></script>
     <style>
         .crt_container{
             background-color: {{ $certificate->background_color }};
@@ -126,29 +128,31 @@
                 <!-- Start col-->
                 <div class="col-md-12 col-lg-10 col-xl-10" >
                     <div class="card m-b-30">
-                        <div class="card-body" style="background-color: {{ $c_information->background_color }}">
+                        <div class="card-body"  id="html-content-holder" style="background-color: {{ $c_information->background_color }}">
                             <div class="invoice">
                                 <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
                                 <div class="crt_container">
                                     <div class="crt_logo">
-                                        <img src="https://www.davidbenrimon.com/files-wide/uploads/logo-placeholder@2x.png">
+                                        @if($new_mark->user_image != null)
+                                        <img src="{{ $new_mark->user_image }}">
+                                            @endif
                                     </div>
                                     <div class="crt_content">
                                         <h1 class="crt_title">
                                             {{ $certificate->certificate }}
                                         </h1>
                                         <h2>{{ $certificate->which_certificate }}</h2>
-                                        <h1 class="colorGreen crt_user">_____</h1>
+                                        <h1 class="colorGreen crt_user"> {{ Auth::user()->name }} </h1>
 
                                         <h3 class="afterName">
-                                            {{ $certificate->summary }}
+                                           <b>{{ $new_mark->got_mark }}/ {{ $new_mark->total_marks }}</b> {{ $certificate->summary }}
                                         </h3>
 
                                         <h3>
                                             <span class="colorGrey">
                                                 {{ $certificate->award }}
                                             </span>
-                                            DD MM YYYY
+                                           {{ $new_mark->exam_time }}
                                         </h3>
 
                                         <div class="signLeft">
@@ -168,20 +172,24 @@
                                     </div>
 
                                 </div>
-                                <div class="invoice-footer">
-                                    <div class="row align-items-center">
-                                        <div class="col-md-6">
-                                            <p class="mb-0"></p>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="invoice-footer-btn">
-                                                <a href="javascript:window.print()" class="btn btn-primary-rgba py-1 font-16"><i class="feather icon-printer mr-2"></i>Print</a>
-                                                <a href="#" class="btn btn-success-rgba py-1 font-16"><i class="feather icon-send mr-2"></i>Submit</a>
-                                            </div>
-                                        </div>
+
+                            </div>
+                        </div>
+                        <div class="invoice-footer">
+                            <div class="row align-items-center">
+                                <div class="col-md-6">
+                                    <p class="mb-0"></p>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="invoice-footer-btn">
+                                        <a href="javascript:window.print()" class="btn btn-primary-rgba py-1 font-16"><i class="feather icon-printer mr-2"></i>Print</a>
+                                        <a href="#" id="btn-Convert-Html2Image" class="btn btn-success-rgba py-1 font-16"><i class="feather icon-send mr-2"></i>Download</a>
+                                        <input id="btn-Preview-Image" type="button" onclick="myFunction()" value="Convert ti image"  class="btn btn-success-rgba py-1 font-16">
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div id="previewImage" class="row">
                         </div>
                     </div>
                 </div>
@@ -190,7 +198,40 @@
             <!-- End col -->
         </section>
     </div>
+
+
 @endsection
 @section('script')
+    <script !src="">
+        document.getElementById("btn-Convert-Html2Image").style.visibility = "hidden";
+        function myFunction() {
+            document.getElementById("btn-Convert-Html2Image").style.visibility = "visible";
+        }
+    </script>
+    <script>
+        $(document).ready(function(){
 
+
+            var element = $("#html-content-holder"); // global variable
+            var getCanvas; // global variable
+
+            $("#btn-Preview-Image").on('click', function () {
+                html2canvas(element, {
+                    onrendered: function (canvas) {
+                        $("#previewImage").append(canvas);
+                        getCanvas = canvas;
+                    }
+                });
+            });
+
+            $("#btn-Convert-Html2Image").on('click', function () {
+                var imgageData = getCanvas.toDataURL("image/png");
+                // Now browser starts downloading it instead of just showing it
+                var newData = imgageData.replace(/^data:image\/png/, "data:application/octet-stream");
+                $("#btn-Convert-Html2Image").attr("download", "Certificate.png").attr("href", newData);
+            });
+
+        });
+
+    </script>
 @endsection

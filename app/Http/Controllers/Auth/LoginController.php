@@ -37,7 +37,7 @@ class LoginController extends Controller
         $findUser = User::where('email',$userSocial->email)->first();
         if($findUser){
             Auth::login($findUser);
-            return redirect('/home');
+            $this->redirectTo=route('CertificateControllerIndex');
         }else{
             //Store user data to db
             $user = User::firstOrCreate([
@@ -49,7 +49,7 @@ class LoginController extends Controller
                 'provider_id'   => $userSocial->getid(),
             ]);
             Auth::login($user,true);
-            return redirect('/home');
+            $this->redirectTo=route('CertificateControllerIndex');
         }
 
 
@@ -74,7 +74,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo;
 
     /**
      * Create a new controller instance.
@@ -83,6 +83,14 @@ class LoginController extends Controller
      */
     public function __construct()
     {
+        if(Auth::check() && Auth::user()->role==1)
+        {
+            $this->redirectTo=route('BackendControllerDashboard');
+        }
+        else
+        {
+            $this->redirectTo=route('CertificateControllerIndex');
+        }
         $this->middleware('guest')->except('logout');
     }
 }

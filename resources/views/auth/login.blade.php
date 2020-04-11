@@ -93,7 +93,6 @@
                                 </div>
                                 <div class="social-login text-center">
                                     <a href="login/facebook" class="btn btn-primary-rgba btn-lg btn-block font-18"><i class="mdi mdi-facebook mr-2"></i>Log in with Facebook</a>
-                                    <button type="submit" class="btn btn-danger-rgba btn-lg btn-block font-18"><i class="mdi mdi-google mr-2"></i>Log in with Google</button>
                                 </div>
                                 <p class="mb-0 mt-3">Don't have a account? <a href="{{ route('register') }}">Sign up</a></p>
                             </div>

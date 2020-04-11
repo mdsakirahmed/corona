@@ -4,14 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Certificate;
 use App\CommonWebsiteInfo;
+use App\Marks;
 use App\QuestionAnswer;
 use App\Result;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CertificateController extends Controller
 {
     public function __construct()
     {
+
         // Check the website Installation
         try {
             $WebsiteInstallation = CommonWebsiteInfo::find(1);
@@ -123,6 +127,8 @@ class CertificateController extends Controller
 
             ";
             exit();
+        }else{
+            $this->middleware('auth');
         }
     }
     /**
@@ -155,35 +161,63 @@ class CertificateController extends Controller
      */
     public function store(Request $request)
     {
+
         $qa = QuestionAnswer::All();
 
+        $count_question=0;
+        $count_marks=0;
         foreach ($qa as $qa) {
+
+            $count_question++;
 
             $this->validate($request,[
                 'YouNeedToAnswerQuestionNumber'.$qa->id=>'required|max:1',
             ]);
 
+            //DB
             $result= new Result();
+
+            $result->user_id=Auth::user()->id;
             $result->question_id=$qa->id;
             $result->question=$qa->question;
             $result->correct_ans=$qa->answer;
 
             $result->given_ans=$request->input('customRadioInline2_id_'.$qa->id);
             if($qa->answer == $request->input('customRadioInline2_id_'.$qa->id)){
+
+                $count_marks++;
                 $result->mark=1;
             }else{
+
                 $result->mark=0;
             }
+
             $result->save();
         }
 
+        $mark= new Marks();
+        $mark->user_id = Auth::user()->id;
+        $mark->user_name = Auth::user()->name;
+        $mark->user_image = Auth::user()->avatar;
+        $mark->exam_time = Carbon::today()->toDateString();
+        $mark->total_marks = $count_question;
+        $mark->got_mark = $count_marks;
+
         try{
+
+            $mark->save();
             session()->flash('message','Successfully Store.');
             session()->flash('type','success');
             $c_information  =   CommonWebsiteInfo::find(1);
             $certificate  =   Certificate::find(1);
-            return view('certificate.certificate',compact('c_information','certificate'));
+            $new_mark = Marks::latest()->where('user_id',  Auth::user()->id)->first();
+            //$user = DB::table('users')->where('name', 'John')->first();
+           // $this->middleware('auth');
+
+                return view('certificate.certificate',compact('c_information','certificate','new_mark'));
+
         }catch (Exception $exception){
+
             session()->flash('message','Error');
             session()->flash('type','danger');
             return redirect()->back();

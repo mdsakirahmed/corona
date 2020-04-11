@@ -26,5 +26,19 @@ class ResetPasswordController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo;
+
+    public function __construct()
+    {
+        if(Auth::check() && Auth::user()->role==1)
+        {
+            $this->redirectTo=route('BackendControllerDashboard');
+        }
+        else
+        {
+            $this->redirectTo=route('CertificateControllerIndex');
+        }
+        $this->middleware('guest')->except('logout');
+    }
+
 }

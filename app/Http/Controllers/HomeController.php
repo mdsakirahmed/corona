@@ -21,7 +21,14 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+    //Public
     public function index()
+    {
+        return redirect(route('CertificateControllerIndex'));
+    }
+
+    //Admin
+    public function adminHome()
     {
         return redirect(route('BackendControllerDashboard'));
     }

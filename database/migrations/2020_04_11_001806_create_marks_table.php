@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateResultsTable extends Migration
+class CreateMarksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreateResultsTable extends Migration
      */
     public function up()
     {
-        Schema::create('results', function (Blueprint $table) {
+        Schema::create('marks', function (Blueprint $table) {
             $table->id();
             $table->string('user_id')->nullable();
-            $table->string('question_id')->nullable();
-            $table->string('question')->nullable();
-            $table->string('correct_ans')->nullable();
-            $table->string('given_ans')->nullable();
-            $table->boolean('mark')->nullable();
+            $table->string('user_name')->nullable();
+            $table->string('user_image')->nullable();
+            $table->string('exam_time')->nullable();
+            $table->string('total_marks')->nullable();
+            $table->string('got_mark')->nullable();
             $table->timestamps();
         });
     }
@@ -32,6 +32,6 @@ class CreateResultsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('results');
+        Schema::dropIfExists('marks');
     }
 }
